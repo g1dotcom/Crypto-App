@@ -9,7 +9,7 @@ const Bitcoin = () => {
   useEffect(() => {
     const fetchPrices = async () => {
       const response = await axios.get(
-        "https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT"
+        "https://api.binance.com/api/v3/ticker/24hr?symbol=BNBUSDT"
       );
       setPrices(response.data);
     };
@@ -40,7 +40,7 @@ const Bitcoin = () => {
               />
 
               <h1 className="text-gray-500">
-                {prices.weightedAvgPrice.slice(0, 8)}
+                {prices.weightedAvgPrice.slice(0, 5)}
               </h1>
             </div>
             <p
