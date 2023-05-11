@@ -31,7 +31,7 @@ const Sol = () => {
             />
 
             <h1 className="">{prices.symbol}</h1>
-            <h1 className="font-bold text-xl text-[#62688f] w-full bg-gray-200">
+            <h1 className="font-bold text-xl text-[#5d9eca] w-full bg-gray-200">
               Solana
             </h1>
             <div className="flex justify-center items-center w-full">
