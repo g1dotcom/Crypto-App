@@ -8,6 +8,7 @@ import Dot from "../dot/Dot";
 import Sol from "../sol/Sol";
 import Mana from "../mana/Mana";
 import Sand from "../sand/Sand";
+import Bnb from "../bnb/Bnb";
 
 const BodyComp = () => {
   return (
@@ -19,6 +20,7 @@ const BodyComp = () => {
       <Sol />
       <Mana />
       <Sand />
+      <Bnb />
     </div>
   );
 };
