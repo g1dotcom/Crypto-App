@@ -29,7 +29,7 @@ const Bitcoin = () => {
             />
 
             <h1 className="">{prices.symbol}</h1>
-            <h1 className="font-bold text-xl text-[#f7931a] w-full bg-gray-50">
+            <h1 className="font-bold text-xl text-[#f0b90b] w-full bg-gray-50">
               Binance Coin
             </h1>
             <div className="flex justify-center items-center w-full">
