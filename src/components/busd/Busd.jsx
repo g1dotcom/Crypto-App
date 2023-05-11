@@ -1,17 +1,15 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-
 import LoadingSpinner from "loading-app-for-react";
-
 import { AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai";
 
-const Ethereum = () => {
+const Busd = () => {
   const [prices, setPrices] = useState({});
 
   useEffect(() => {
     const fetchPrices = async () => {
       const response = await axios.get(
-        "https://api.binance.com/api/v3/ticker/24hr?symbol=ETHUSDT"
+        "https://api.binance.com/api/v3/ticker/24hr?symbol=BUSDUSDT"
       );
       setPrices(response.data);
     };
@@ -26,13 +24,13 @@ const Ethereum = () => {
           <div className="flex flex-col justify-around items-center h-full w-full">
             <img
               className="w-24"
-              src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Ethereum-icon-purple.svg"
+              src="https://content-api.changenow.io/uploads/busdbsc_321c390762.svg"
               alt=""
             />
 
             <h1 className="">{prices.symbol}</h1>
-            <h1 className="font-bold text-xl text-[#62688f] w-full bg-gray-200">
-              Ethereum
+            <h1 className="font-bold text-xl text-[#f0b90b] w-full bg-gray-50">
+              Busd
             </h1>
             <div className="flex justify-center items-center w-full">
               <img
@@ -73,4 +71,4 @@ const Ethereum = () => {
   );
 };
 
-export default Ethereum;
+export default Busd;
