@@ -19,15 +19,16 @@ const Bitcoin = () => {
   return (
     <div className="">
       {prices.weightedAvgPrice ? (
-        <div className="bg-gray-100 w-64 h-48 rounded-lg flex justify-center items-center">
+        <div className="bg-gray-100 w-64 h-64 rounded-lg flex justify-center items-center">
           <div className="flex flex-col justify-around items-center h-full w-1/2">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg"
+              className="w-24"
+              src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Ethereum-icon-purple.svg"
               alt=""
             />
 
             <h1 className="">{prices.symbol}</h1>
-            <h1 className="font-bold text-xl">Bitcoin</h1>
+            <h1 className="font-bold text-xl text-[#62688f]">Ethereum</h1>
             <div className="flex justify-center items-center w-full">
               <img
                 className="w-6 h-6 mr-2"
@@ -45,6 +46,7 @@ const Bitcoin = () => {
               } text-2xl`}
             >
               {" "}
+              <span>%</span>
               {prices.priceChangePercent}
             </p>
           </div>
