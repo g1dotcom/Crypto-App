@@ -1,15 +1,17 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+
 import LoadingSpinner from "loading-app-for-react";
+
 import { AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai";
 
-const Bitcoin = () => {
+const Dot = () => {
   const [prices, setPrices] = useState({});
 
   useEffect(() => {
     const fetchPrices = async () => {
       const response = await axios.get(
-        "https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT"
+        "https://api.binance.com/api/v3/ticker/24hr?symbol=DOTUSDT"
       );
       setPrices(response.data);
     };
@@ -24,13 +26,13 @@ const Bitcoin = () => {
           <div className="flex flex-col justify-around items-center h-full w-full">
             <img
               className="w-24"
-              src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg"
+              src="https://s1.coincarp.com/logo/1/polkadot100.png?style=200&v=1661586222"
               alt=""
             />
 
             <h1 className="">{prices.symbol}</h1>
-            <h1 className="font-bold text-xl text-[#f7931a] w-full bg-gray-50">
-              Bitcoin
+            <h1 className="font-bold text-xl text-[#62688f] w-full bg-gray-200">
+              Palkadot
             </h1>
             <div className="flex justify-center items-center w-full">
               <img
@@ -40,7 +42,7 @@ const Bitcoin = () => {
               />
 
               <h1 className="text-gray-500">
-                {prices.weightedAvgPrice.slice(0, 8)}
+                {prices.weightedAvgPrice.slice(0, 5)}
               </h1>
             </div>
             <p
@@ -73,4 +75,4 @@ const Bitcoin = () => {
   );
 };
 
-export default Bitcoin;
+export default Dot;

@@ -20,7 +20,7 @@ const Ethereum = () => {
   }, [prices, setPrices]);
 
   return (
-    <div className="">
+    <div className="mx-10 my-10">
       {prices.weightedAvgPrice ? (
         <div className="bg-gray-100 w-64 h-64 rounded-lg flex justify-center items-center">
           <div className="flex flex-col justify-around items-center h-full w-full">
@@ -41,7 +41,9 @@ const Ethereum = () => {
                 alt=""
               />
 
-              <h1 className="text-gray-500">{prices.weightedAvgPrice}</h1>
+              <h1 className="text-gray-500">
+                {prices.weightedAvgPrice.slice(0, 8)}
+              </h1>
             </div>
             <p
               className={`${
