@@ -17,11 +17,11 @@ const Ethereum = () => {
     };
 
     fetchPrices();
-  }, [prices]);
+  }, [prices, setPrices]);
 
   return (
     <div className="mx-10 my-10">
-      {prices.weightedAvgPrice ? (
+      {prices?.weightedAvgPrice ? (
         <div className="bg-gray-100 w-64 h-64 rounded-lg flex justify-center items-center">
           <div className="flex flex-col justify-around items-center h-full w-full">
             <img
@@ -30,7 +30,7 @@ const Ethereum = () => {
               alt=""
             />
 
-            <h1 className="">{prices.symbol}</h1>
+            <h1 className="">{prices?.symbol}</h1>
             <h1 className="font-bold text-xl text-[#62688f] w-full bg-gray-200">
               Ethereum
             </h1>
@@ -42,19 +42,19 @@ const Ethereum = () => {
               />
 
               <h1 className="text-gray-500">
-                {prices.weightedAvgPrice.slice(0, 8)}
+                {prices?.weightedAvgPrice.slice(0, 8)}
               </h1>
             </div>
             <p
               className={`${
-                prices.priceChangePercent > 0
+                prices?.priceChangePercent > 0
                   ? "text-green-400"
                   : "text-red-400 "
               } text-2xl flex w-full justify-around items-center`}
             >
               <span>%</span>
-              {prices.priceChangePercent}
-              {prices.priceChangePercent > 0 ? (
+              {prices?.priceChangePercent}
+              {prices?.priceChangePercent > 0 ? (
                 <span className="text-green-500">
                   <AiOutlineArrowUp />
                 </span>
