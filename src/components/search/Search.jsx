@@ -24,7 +24,7 @@ const Search = () => {
   return (
     <div className="w-full flex flex-col items-center justify-center ">
       <form
-        className="shadow-2xl bg-gray-400  shadow-gray-500"
+        className="shadow-2xl bg-gray-300 rounded-xl  shadow-gray-500"
         onSubmit={handleFormSubmit}
       >
         <h1 className="text-sm text-center flex flex-col bg-gray-300 p-2 rounded-xl my-2">
@@ -38,10 +38,10 @@ const Search = () => {
           onChange={handleInputChange}
         />
         <button
-          className="p-2 outline-none hover:bg-gray-300 bg-gray-200"
+          className="p-2 outline-none hover:bg-gray-300 bg-gray-400 font-medium"
           type="submit"
         >
-          Get Price
+          Coin Ara
         </button>
       </form>
       <div className=" bg-gray-50 p-2 flex  justify-center items-center shadow-2xl my-6 shadow-gray-500">
@@ -56,7 +56,11 @@ const Search = () => {
           <h1 className="">
             {price && (
               <p className="text-lg font-bold text-center">
-                {`${coin.toUpperCase()} ${price.slice(0, 7)}`}
+                {`${coin.toUpperCase()} `}{" "}
+                <span className="bg-yellow-500 text-white p-1 rounded-xl font-medium">{`${price.slice(
+                  0,
+                  7
+                )}`}</span>
                 <span className="text-xs text-yellow-500 mx-2">USDT</span>
                 <h1>{price.priceChangePercent}</h1>
               </p>

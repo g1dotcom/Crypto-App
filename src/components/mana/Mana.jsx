@@ -17,7 +17,7 @@ const Mana = () => {
     };
 
     fetchPrices();
-  }, [prices, setPrices]);
+  }, [prices]);
 
   return (
     <div className="mx-10 my-10">

@@ -16,7 +16,13 @@ function App() {
         <SliderComp />
       </div>
       <Search />
-      <BodyComp />
+      <div className="w-full my-10">
+        <h1 className="text-2xl font-bold text-center text-gray-700">
+          Popular Crypto Currencies
+        </h1>
+        <BodyComp />
+      </div>
+
       <Footer />
     </div>
   );
