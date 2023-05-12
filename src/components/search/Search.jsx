@@ -13,17 +13,24 @@ const Search = () => {
 
     try {
       const response = await fetch(
-        `https://api.binance.com/api/v3/ticker/price?symbol=${coin.toUpperCase()}USDT`
+        ` https://api.binance.com/api/v3/ticker/24hr?symbol=${coin.toUpperCase()}USDT`
       );
       const data = await response.json();
-      setPrice(data.price);
+      setPrice(data.weightedAvgPrice);
     } catch (error) {
       console.log(error);
     }
   };
   return (
     <div className="w-full flex flex-col items-center justify-center ">
-      <form className="shadow-2xl shadow-gray-500" onSubmit={handleFormSubmit}>
+      <form
+        className="shadow-2xl bg-gray-400  shadow-gray-500"
+        onSubmit={handleFormSubmit}
+      >
+        <h1 className="text-sm text-center flex flex-col bg-gray-300 p-2 rounded-xl my-2">
+          Coinlerin kısaltmaları ile arama yapınız.
+          <span>Örn:Btc,eth</span>
+        </h1>
         <input
           className="p-2 outline-none  bg-gray-100"
           type="text"
@@ -49,8 +56,9 @@ const Search = () => {
           <h1 className="">
             {price && (
               <p className="text-lg font-bold text-center">
-                {`${coin.toUpperCase()} ${price.slice(0, 6)}`}{" "}
-                <span className="text-xs text-yellow-500">USDT</span>{" "}
+                {`${coin.toUpperCase()} ${price.slice(0, 7)}`}
+                <span className="text-xs text-yellow-500 mx-2">USDT</span>
+                <h1>{price.priceChangePercent}</h1>
               </p>
             )}
           </h1>
