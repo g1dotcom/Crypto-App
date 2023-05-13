@@ -7,7 +7,6 @@ import Footer from "./components/footer/Footer";
 //components
 
 import Navbar from "./components/navbar/Navbar";
-import Search from "./components/search/Search";
 
 function App() {
   return (
