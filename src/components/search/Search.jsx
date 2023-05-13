@@ -18,7 +18,7 @@ const Search = () => {
         ` https://api.binance.com/api/v3/ticker/24hr?symbol=${coin.toUpperCase()}USDT`
       );
       const data = await response.json();
-      setPrice(data.weightedAvgPrice);
+      setPrice(data?.weightedAvgPrice);
     } catch (error) {
       console.log(error);
     }
@@ -26,10 +26,10 @@ const Search = () => {
   return (
     <div className="w-full flex flex-col items-center justify-center ">
       <form
-        className="shadow-2xl bg-gray-300 rounded-xl  shadow-gray-500"
+        className="shadow-2xl bg-gray-200 rounded-xl  shadow-gray-500"
         onSubmit={handleFormSubmit}
       >
-        <h1 className="text-sm text-center flex flex-col bg-gray-300 p-2 rounded-xl my-2">
+        <h1 className="text-sm text-center flex flex-col bg-gray-200 p-2 rounded-xl my-2">
           Coinlerin kısaltmaları ile arama yapınız.
           <span>Örn:Btc,eth,sol...</span>
         </h1>
@@ -40,7 +40,7 @@ const Search = () => {
           onChange={handleInputChange}
         />
         <button
-          className="p-2 outline-none hover:bg-gray-300 bg-gray-400 font-medium"
+          className="p-2 outline-none text-white hover:bg-gray-300 bg-yellow-500 font-medium"
           type="submit"
         >
           Coin Ara
@@ -72,7 +72,9 @@ const Search = () => {
           </div>
         </div>
       ) : (
-        <LoadingSpinner />
+        <div className="my-6  w-full h-full">
+          <LoadingSpinner />
+        </div>
       )}
     </div>
   );
