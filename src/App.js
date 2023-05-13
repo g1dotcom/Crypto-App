@@ -1,6 +1,7 @@
 import "./App.css";
 import BodyComp from "./components/BodyComp/BodyComp";
 import SliderComp from "./components/Slider/SliderComp";
+import FFF from "./components/fff";
 import Footer from "./components/footer/Footer";
 
 //components
@@ -15,7 +16,8 @@ function App() {
       <div className="w-full">
         <SliderComp />
       </div>
-      <Search />
+
+      <FFF />
       <div className="w-full my-10">
         <h1 className="text-2xl font-bold text-center text-gray-700">
           Popüler Kripto Paralar
